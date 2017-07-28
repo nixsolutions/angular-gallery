@@ -10,7 +10,9 @@
 
     <md-list class="thumb-list">
       <md-list-item *ngFor="let image of galleryObject.images; let i = index">
-        <gallery-item [image]="image" [itemIndex]="i" [currIndex]="galleryObject.currIndex"></gallery-item>
+        <gallery-item [image]="image" [state]="image.state" [itemIndex]="i"
+          [current]="i == galleryObject.currIndex"></gallery-item>
+        {{ image.state }}
       </md-list-item>
     </md-list>
   </div>

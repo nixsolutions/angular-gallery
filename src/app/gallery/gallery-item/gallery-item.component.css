@@ -20,3 +20,7 @@
 .thumb-list-item:hover .edit-img {
     display: block;
 }
+
+.current-thumb-img {
+    border: solid 3px #000;
+}

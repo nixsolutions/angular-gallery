@@ -32,6 +32,7 @@ export class GalleryService {
     images.map(item => {
       storage.ref(item.path).getDownloadURL()
         .then(res => {
+          item.state = 'inactive';
           item.src = res;
         });
     });

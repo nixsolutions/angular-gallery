@@ -10,6 +10,7 @@ export interface GalleryObject {
 export interface GalleryImage {
     $key: string;
     path: string;
+    state?: string;
     src?: any;
     title?: string;
 }

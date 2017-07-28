@@ -1,20 +1,36 @@
 import { Component, Input, ViewContainerRef, OnInit } from '@angular/core';
 import { MdDialog, MdDialogConfig, MdDialogRef } from '@angular/material';
+import { trigger, state, style, animate, transition } from '@angular/animations'
 
 import { ImageUploadDialog } from '../../components/image-upload/image-upload.dialog';
 import { GalleryService } from '../../services/gallery.service';
 import { GalleryImage } from "../../services/gallery.object";
+import {timeout} from "rxjs/operator/timeout";
 
 @Component({
   selector: 'gallery-item',
   templateUrl: './gallery-item.component.html',
-  styleUrls: ['./gallery-item.component.css']
+  styleUrls: ['./gallery-item.component.css'],
+  animations: [
+    trigger('itemState', [
+      state('inactive', style({
+//
+      })),
+      state('active',   style({
+//
+      })),
+      transition('inactive => active', animate('1000ms ease-in')),
+      transition('active => inactive', animate('1000ms ease-out'))
+    ])
+  ]
 })
 export class GalleryItemComponent implements OnInit {
 
   @Input() image;
   @Input() itemIndex;
-  @Input() currIndex;
+  @Input() current;
+  @Input() state;
+
   dialogRef: MdDialogRef<ImageUploadDialog>;
 
   constructor(
@@ -26,10 +42,10 @@ export class GalleryItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  isVisible() {
-    return  this.currIndex < 5 && this.itemIndex < 5
-        || this.currIndex >= 5 && (this.currIndex - this.itemIndex) < 5 && this.itemIndex <= this.currIndex;
-  }
+  //isVisible() {
+  //  return this.currIndex < 5 && this.itemIndex < 5
+  //      || this.currIndex >= 5 && (this.currIndex - this.itemIndex) < 5 && this.itemIndex <= this.currIndex;
+  //}
 
   changeSlide(index) {
     this.galleryService.set(index);

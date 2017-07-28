@@ -24,10 +24,6 @@ md-card-actions {
     float: right;
 }
 
-.current-thumb-img {
-    border: solid 3px #000;
-}
-
 .mat-card-title {
     overflow:hidden;
 }

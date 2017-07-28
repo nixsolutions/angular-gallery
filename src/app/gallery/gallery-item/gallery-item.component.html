@@ -1,7 +1,6 @@
-<div class="thumb-list-item" *ngIf="isVisible()">
-
+<div class="thumb-list-item" [@itemState]="state">
   <md-spinner *ngIf="!(image.src)"></md-spinner>
   <img md-card-md-image [attr.src]="image.src" (click)="changeSlide(itemIndex)"
-       [ngClass]="{'current-thumb-img': itemIndex == currIndex}">
+       [ngClass]="{'current-thumb-img': current}">
   <md-icon class="edit-img" (click)="openModal(image)">edit</md-icon>
 </div>
