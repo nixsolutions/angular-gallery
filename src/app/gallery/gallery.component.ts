@@ -19,7 +19,7 @@ import { GalleryService } from '../services/gallery.service';
         display: 'none'
       })),
       transition('inactive => active', animate('700ms ease-in')),
-      transition('active => inactive', animate('200ms ease-out'))
+      transition('active => inactive', animate('0ms ease-out'))
     ])
   ]
 })

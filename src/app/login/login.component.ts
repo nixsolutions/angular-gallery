@@ -20,15 +20,15 @@ export class LoginComponent implements OnInit {
   ) {
     iconRegistry.addSvgIcon(
       'facebook',
-      sanitizer.bypassSecurityTrustResourceUrl('/assets/svg/social/facebook.svg')
+      sanitizer.bypassSecurityTrustResourceUrl('assets/svg/social/facebook.svg')
     );
     iconRegistry.addSvgIcon(
         'twitter',
-        sanitizer.bypassSecurityTrustResourceUrl('/assets/svg/social/twitter.svg')
+        sanitizer.bypassSecurityTrustResourceUrl('assets/svg/social/twitter.svg')
     );
     iconRegistry.addSvgIcon(
         'google-plus',
-        sanitizer.bypassSecurityTrustResourceUrl('/assets/svg/social/google-plus.svg')
+        sanitizer.bypassSecurityTrustResourceUrl('assets/svg/social/google-plus.svg')
     );
   }
 
