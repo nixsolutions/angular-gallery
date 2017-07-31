@@ -22,5 +22,7 @@
 }
 
 .current-thumb-img {
-    border: solid 3px #000;
+    border: solid 2px #ffd740;
+    height: 110px;
+    width: 110px;
 }

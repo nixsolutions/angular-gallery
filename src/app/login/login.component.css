@@ -1,17 +1,18 @@
 .login-card {
     width: 500px;
-    margin: 0 auto;
+    margin: 0 auto 50px;
 }
 
 .mat-card-header .mat-card-title {
     font-size: 24px;
+    margin-top: 30px;
 }
 
 .button-row {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: 100px;
+    height: 90px;
 }
 
 .button-row button span {

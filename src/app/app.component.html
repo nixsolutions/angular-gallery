@@ -15,27 +15,31 @@
     </div>
 
     <!-- router outlet goes here -->
-    <section class="bgc-blue-grey-50">
-      <div layout-gt-xs="row">
-        <div flex class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad-xl']">
-          <div class="push-top-xl" hide-xs></div>
+    <main flex class="bgc-blue-grey-50">
+      <section>
+        <div layout-gt-xs="row">
+          <div flex class="pad" tdMediaToggle="gt-xs" [mediaClasses]="['pad-xl']">
+            <div class="push-top-xl" hide-xs></div>
 
-          <router-outlet></router-outlet>
+            <router-outlet></router-outlet>
 
-        </div>
-      </div>
-    </section>
-    <!-- end content -->
-
-    <section class="bgc-blue-grey-800 tc-blue-grey-100">
-      <div layout-gt-xs="row" layout-align-gt-xs="center center">
-        <div layout-gt-sm="row" flex-gt-xs="75" layout-margin layout-padding>
-          <div flex>
-            <p class="md-body-1">&copy; Copyright 2017 NixSolutions</p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
+    <!-- end content -->
+
+    <footer>
+      <section class="bgc-blue-grey-800 tc-blue-grey-100">
+        <div layout-gt-xs="row" layout-align-gt-xs="center center">
+          <div layout-gt-sm="row" flex-gt-xs="75" layout-margin layout-padding>
+            <div flex>
+              <p class="md-body-1">&copy; Copyright 2017 NixSolutions</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
   </td-layout-nav>
 
 </td-layout>

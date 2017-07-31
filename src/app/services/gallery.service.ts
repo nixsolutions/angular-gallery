@@ -25,14 +25,26 @@ export class GalleryService {
     return this.db.list('/' + this.referencePath);
   }
 
+  slide() {
+    const gallery = this.gallery.getValue();
+
+    gallery.images.map((item, iIndex) => {
+      item.state = 'inactive';
+      if (gallery.currIndex < 5 && iIndex < 5
+          || gallery.currIndex >= 5 && (gallery.currIndex - iIndex) < 5 && iIndex <= gallery.currIndex) {
+        item.state = 'active';
+      }
+    });
+  }
+
   load(images: GalleryImage[]) {
     let app = firebase.app('gallery');
     let storage = firebase.storage(app);
+    const gallery = this.gallery.getValue();
 
-    images.map(item => {
+    images.map((item) => {
       storage.ref(item.path).getDownloadURL()
         .then(res => {
-          item.state = 'inactive';
           item.src = res;
         });
     });
@@ -44,6 +56,8 @@ export class GalleryService {
       hasPrev: false,
       active: false
     });
+
+    this.slide();
   }
 
   next() {
@@ -78,11 +92,12 @@ export class GalleryService {
       hasPrev: index > 0,
       active: true
     }));
+
+    this.slide();
   }
 
   setCurrentLast() {
     const gallery = this.gallery.getValue();
-
     let newCurrIndex = gallery.images.length - 1;
 
     this.gallery.next(Object.assign({}, gallery, {

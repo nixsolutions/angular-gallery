@@ -2,12 +2,12 @@
     display: block;
 }
 .img-upload-form .row {
-    padding: 15px 0;
+    padding: 10px 0;
 }
 
 .img-drop-zone {
     border: dotted 3px lightgray;
-    height: 350px;
+    height: 300px;
     position: relative;
 }
 .img-drop-zone label {
@@ -22,8 +22,7 @@
 .img-drop-zone label span {
     display: block;
     text-align: center;
-    height: 100%;
-    padding-top: 150px;
+    margin-top: 125px;
 }
 .img-drop-zone img {
     position: absolute;

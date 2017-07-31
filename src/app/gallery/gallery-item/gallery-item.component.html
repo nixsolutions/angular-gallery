@@ -1,4 +1,4 @@
-<div class="thumb-list-item" [@itemState]="state">
+<div class="thumb-list-item">
   <md-spinner *ngIf="!(image.src)"></md-spinner>
   <img md-card-md-image [attr.src]="image.src" (click)="changeSlide(itemIndex)"
        [ngClass]="{'current-thumb-img': current}">
